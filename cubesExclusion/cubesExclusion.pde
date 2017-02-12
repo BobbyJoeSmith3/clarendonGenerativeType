@@ -6,18 +6,14 @@ void setup() {
   cubeA = createGraphics(width, height, P3D);
   cubeB = createGraphics(width, height, P3D);
   noCursor();
+  blendMode(EXCLUSION);
 }
 
 void draw() {
-  background(0);
+  background(255);
   drawCube(cubeA, 100, 200);
   drawCube(cubeB, 150, 250);
-  float alphaA = map(mouseX, 0, width, 0, 255);
-  tint(255, alphaA);
   image(cubeA, 0, 0);
-  //map tint values of cubeB to Y position of mouse
-  float alphaB = map(mouseY, 0, height, 0, 255);
-  tint(255, alphaB);
   image(cubeB, 0, 0);
 }
 
